@@ -1,0 +1,13 @@
+name = "IPIL8"
+uuid = "b9e0ca82-d819-4ec9-8d9c-e83755759c7d"
+authors = ["Andrey Borzunov <Andrey.Borzunov@gmail.com> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
