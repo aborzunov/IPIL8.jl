@@ -3,6 +3,9 @@ uuid = "b9e0ca82-d819-4ec9-8d9c-e83755759c7d"
 authors = ["Andrey Borzunov <Andrey.Borzunov@gmail.com> and contributors"]
 version = "0.1.0"
 
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+
 [compat]
 julia = "1"
 
