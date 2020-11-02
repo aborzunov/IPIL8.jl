@@ -13,9 +13,14 @@ module IPIL8
 using LinearAlgebra
 using Plots
 using ProgressMeter
+using Dierckx
+using LaTeXStrings
+using Missings
+using Printf
 
 include("direct.jl")
 include("utilities.jl")
 include("plotting.jl")
+include("data_generation.jl")
 
 end

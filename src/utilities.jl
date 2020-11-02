@@ -14,7 +14,7 @@ default_parameters()
     exp = quote
         a       = 0.0;
         b       = 1.0;
-        Tₑ      = 1.0;
+        Tₑ      = 0.5;
         t₀      = 0.0;
         N       = 100;
         M       = 250;
@@ -32,3 +32,21 @@ default_parameters()
 
     return exp;
 end
+
+function θ(x)
+    return x < 0 ? 0.0 : 1.0;
+end
+
+function δ(x, w = 0.001)
+    out = 0.0;
+    p = abs(x / w);
+
+    if p <= 1/2
+        out = 2 / w * (1 - p - 4 * p^2 + 4 * p^3)
+    elseif 1/2 < p <= 1
+        out = 2 / w * (1 - 11/3 * p + 4 * p^2 - 4/3 * p^3)
+    end
+
+    return out;
+end
+
