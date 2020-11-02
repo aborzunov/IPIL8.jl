@@ -20,15 +20,15 @@ directRP!(
     @assert ε > 0
 
     RP[1] = ε * (y[2] - 2 * y[1] + ulₘ[m]) / h^2 +
-        y[1] * (y[2] - ulₘ[m]) / 2h - y[1];
+        y[1] * (y[2] - ulₘ[m]) / (2 * h) - y[1];
 
     for n in 2:N-2
         RP[n] = ε * (y[n+1] - 2 * y[n] + y[n-1]) / h^2 +
-            y[n] * (y[n+1] - y[n-1]) / 2h - y[n];
+            y[n] * (y[n+1] - y[n-1]) / (2 * h) - y[n];
     end
 
     RP[N-1] = ε * (urₘ[m] - 2 * y[N-1] + y[N-2]) / h^2 +
-        y[N-1] * (urₘ[m] - y[N-1 - 1]) / 2h - y[N-1];
+        y[N-1] * (urₘ[m] - y[N-2]) / (2 * h) - y[N-1];
 
     return RP;
 end
@@ -88,11 +88,13 @@ solve!(
     ε::Real,
     ulₘ::Vector,
     urₘ::Vector;
-    α::Complex = complex(0.5, 0.5)
-)
-    # TODO:
-    # check solution length
-    #
+    α::Complex = complex(0.5, 0.5))
+
+    if size(u) != (N+1, M+1)
+        throw(ArgumentError("""size(u) == $(size(u)), N == $(N), M == $(M)
+        Матрица `u` должена иметь размерность (N+1, M+1)."""))
+    end
+
     if length(u₀) != N+1
         throw(ArgumentError("""length(u₀) == $(length(u₀)), N == $(N)
         Массив `u₀` должен иметь размерность N+1."""))

@@ -11,8 +11,11 @@
 module IPIL8
 
 using LinearAlgebra
+using Plots
+using ProgressMeter
 
 include("direct.jl")
 include("utilities.jl")
+include("plotting.jl")
 
 end
