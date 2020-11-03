@@ -1,1 +1,2 @@
 assets/logo_msu_physics.jpg filter=lfs diff=lfs merge=lfs -text
+assets/readme_animation.gif filter=lfs diff=lfs merge=lfs -text

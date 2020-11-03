@@ -4,4 +4,4 @@
 
 # Решение очередной обратной задачи
 
-![logo](assets/logo_msu_physics.jpg)
+![logo](assets/readme_animation.gif)
