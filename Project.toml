@@ -15,6 +15,7 @@ ProgressMeter = "92933f4c-e287-5a05-a399-4b506db050ca"
 [compat]
 Dierckx = "0.4"
 Missings = "0.4"
+Plots = "1.8"
 julia = "1"
 
 [extras]
